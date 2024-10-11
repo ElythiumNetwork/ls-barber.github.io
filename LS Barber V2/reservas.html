@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Reservas - LS Barber</title>
+</head>
+<body>
+    <header>
+        <h1>Reservas en LS Barber</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="reseñas.html">Reseñas</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Reserva tu Cita</h2>
+        <form id="reservationForm">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" required>
+            <label for="date">Fecha:</label>
+            <input type="date" id="date" required>
+            <label for="time">Hora:</label>
+            <input type="time" id="time" required>
+            <button type="submit">Reservar</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 LS Barber</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+<script>
+    // URL del webhook de Discord
+const webhookURL = 'https://discord.com/api/webhooks/1292569628115079168/bdN7Th-63tjAzKwB6QlXKNZ1CJpnVyBuRXTe9nhL69KK3_gNu3PQtdqX3ruaUrykc_hQ'; // Reemplaza con tu URL de webhook
+
+const form = document.getElementById('reservationForm');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault(); // Evitar el envío del formulario por defecto
+
+    // Recopila los datos del formulario
+    const reservationData = {
+        name: form.name.value,
+        date: form.date.value,
+        time: form.time.value
+    };
+
+    sendToDiscord(reservationData);
+});
+
+// Función para enviar datos a Discord
+const sendToDiscord = (reservationData) => {
+    fetch(webhookURL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            content: `Nueva reserva recibida: \nNombre: ${reservationData.name} \nFecha: ${reservationData.date} \nHora: ${reservationData.time}`
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Reserva enviada correctamente');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Reserva enviada correctamente a Discord:', data);
+        // Puedes añadir un mensaje de éxito en la interfaz si deseas
+        alert('Reserva enviada correctamente');
+        form.reset(); // Restablecer el formulario
+    })
+    .catch(error => {
+        console.error('Error al enviar la reserva a Discord:', error);
+        // Puedes mostrar un mensaje de error en la interfaz si deseas
+        alert('Reserva enviada correctamente');
+    });
+};
+
+</script>
+
+</html>

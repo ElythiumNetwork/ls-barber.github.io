@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Reseñas - LS Barber</title>
+</head>
+
+<style>
+    /* Estilos para la página de reseñas */
+.review-container {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 10px 0;
+    transition: transform 0.2s ease;
+}
+
+.review-container:hover {
+    transform: translateY(-5px);
+}
+
+.review-container strong {
+    display: block;
+    color: #282c34; /* Color del nombre del revisor */
+    margin-bottom: 5px;
+}
+
+.review-container p {
+    color: #555; /* Color del texto de la reseña */
+    margin: 0;
+    font-size: 14px;
+}
+
+</style>
+
+<body>
+    <header>
+        <h1>Reseñas de Clientes</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="reseñas.html">Reseñas</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+<!-- Reseñas HTML -->
+<h2>Deja tu reseña</h2>
+<form id="reviewForm">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" required>
+    
+    <label for="review">Reseña:</label>
+    <textarea id="review" required></textarea>
+    
+    <button type="submit">Enviar Reseña</button>
+</form>
+
+<h2>Reseñas</h2>
+<ul id="reviewsList"></ul>
+
+
+
+    </main>
+    <footer>
+        <p>&copy; 2024 LS Barber</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
