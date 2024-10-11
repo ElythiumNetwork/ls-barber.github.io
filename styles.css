@@ -1,0 +1,134 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+}
+
+header {
+    background-color: #282c34;
+    color: white;
+    padding: 1.5em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.barberos, .servicios {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.barbero, .servicio {
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.barbero img, .servicio img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #282c34;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos para la página de reseñas */
+#reviewForm {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin: 20px 0;
+}
+
+#reviewForm label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+#reviewForm input[type="text"],
+#reviewForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#reviewForm button {
+    background-color: #282c34;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#reviewsList {
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilos para la página de reservas */
+#reservationForm {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin: 20px 0;
+}
+
+#reservationForm label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+#reservationForm input[type="text"],
+#reservationForm input[type="date"],
+#reservationForm input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#reservationForm button {
+    background-color: #282c34;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
